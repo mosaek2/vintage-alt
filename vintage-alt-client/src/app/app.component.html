@@ -1,26 +1,32 @@
-<div class="banner">
-
-</div>
-
-
-
 <div class="header-global-nav">
   <div class="header-global-nav-frame">
-    <div class="home-box">
+    <div class="home-box" (click)="navigateTo('')">
       HOME
     </div>
     <div class="button-container">
-      <p class="global-button">로그인</p>
+      <p class="global-button" (click)="navigateTo('login')">
+        로그인
+      </p>
       <div class="vertical-bar"></div>
-      <p class="global-button">회원가입</p>
+      <p class="global-button" (click)="navigateTo('join')">
+        회원가입
+      </p>
       <div class="vertical-bar"></div>
-      <p class="global-button">마이페이지</p>
+      <p class="global-button">
+        마이페이지
+      </p>
       <div class="vertical-bar"></div>
-      <p class="global-button">주문내역</p>
+      <p class="global-button">
+        주문내역
+      </p>
       <div class="vertical-bar"></div>
-      <p class="global-button">장바구니</p>
+      <p class="global-button">
+        장바구니
+      </p>
       <div class="vertical-bar"></div>
-      <p class="global-button">찜목록</p>
+      <p class="global-button">
+        찜목록
+      </p>
     </div>
   </div>
 </div>
