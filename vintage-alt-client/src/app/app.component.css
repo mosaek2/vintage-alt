@@ -17,14 +17,12 @@
   font-size: 12px;
   color: #717171;
 }
-
 .header-global-nav-frame {
   width: 1260px;
   height: 46px;
   display: flex;
   align-items: center;
 }
-
 .home-box {
   width: 54px;
   height: 46px;
@@ -34,27 +32,22 @@
   align-items: center;
   margin-right: 18px;
 }
-
 .home-box:hover {
   background-color: #717171;
   color: #ebebeb;
 }
-
 .button-container {
   display: flex;
   gap: 12px;
 }
-
 .home-box,
 .global-button {
   cursor: pointer;
   transition-duration: 0.2s;
 }
-
 .global-button:hover {
   color: #999999;
 }
-
 .vertical-bar {
   width: 1px;
   height: 10px;
@@ -72,13 +65,11 @@
   gap: 13px;
   cursor: default;
 }
-
 .vintage {
   color: #2c2c2c;
   font-size: 36px;
   letter-spacing: 0.2em;
 }
-
 .since {
   color: #717171;
   font-size: 13px;
@@ -98,7 +89,6 @@
   font-size: 14px;
   color: #2c2c2c;
 }
-
 .header-global-category-frame {
   width: 1260px;
   height: 54px;
@@ -106,7 +96,6 @@
   justify-content: space-between;
   align-items: center;
 }
-
 .hamburger-menu {
   width: 54px;
   height: 54px;
@@ -119,13 +108,11 @@
   gap: 4px;
   transition-duration: 0.2s;
 }
-
 .hamburger-menu-line {
   width: 16px;
   height: 2px;
   background-color: #717171;
 }
-
 .menu {
   height: 54px;
   display: flex;
@@ -135,21 +122,17 @@
   transition-duration: 0.2s;
   cursor: pointer;
 }
-
 .menu:hover,
 .menu-wrapper:hover .menu {
   color: #999999;
 }
-
 .sale {
   color: #db0007;
 }
-
 .menu-wrapper,
 .hamburger-menu-wrapper {
   position: relative;
 }
-
 .sub-menu {
   min-width: 438px;
   min-height: 290px;
@@ -161,30 +144,30 @@
   display: none;
   z-index: 20;
 }
-
 .all-menu {
-  min-width: 1048px;
-  min-height: 400px;
+  width: 1048px;
+  height: 400px;
   border: 1px solid #717171;
   background-color: white;
   position: absolute;
   top: 53px;
   display: none;
   z-index: 20;
+  overflow-y: auto;
 }
-
-.menu:hover+.sub-menu,
-.sub-menu:hover,
-.hamburger-menu:hover+.all-menu,
-.all-menu:hover {
+.menu:hover + .sub-menu,
+.sub-menu:hover {
   display: block;
 }
-
+.hamburger-menu:hover + .all-menu,
+.all-menu:hover {
+  display: flex;
+  gap: 100px;
+}
 .hamburger-menu-wrapper:hover .hamburger-menu {
   border: none;
   background-color: #717171;
 }
-
 .hamburger-menu-wrapper:hover .hamburger-menu-line {
   background-color: #ebebeb;
 }
@@ -200,4 +183,16 @@
   background-color: #fbfbfb;
   border-top: 1px solid #ebebeb;
   margin-top: 200px;
+}
+
+.category {
+  margin-left: 0;
+  font-weight: bold;
+}
+.sub-category {
+  margin-left: 20px;
+  font-style: italic;
+}
+.item {
+  margin-left: 40px;
 }

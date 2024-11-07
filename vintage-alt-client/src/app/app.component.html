@@ -1,44 +1,26 @@
 <div class="header-global-nav">
   <div class="header-global-nav-frame">
-    <div class="home-box" (click)="navigateTo('')">
-      HOME
-    </div>
+    <div class="home-box" (click)="navigateTo('')">HOME</div>
     <div class="button-container">
-      <p class="global-button" (click)="navigateTo('login')">
-        로그인
-      </p>
+      <p class="global-button" (click)="navigateTo('login')">로그인</p>
       <div class="vertical-bar"></div>
-      <p class="global-button" (click)="navigateTo('join')">
-        회원가입
-      </p>
+      <p class="global-button" (click)="navigateTo('join')">회원가입</p>
       <div class="vertical-bar"></div>
-      <p class="global-button">
-        마이페이지
-      </p>
+      <p class="global-button">마이페이지</p>
       <div class="vertical-bar"></div>
-      <p class="global-button">
-        주문내역
-      </p>
+      <p class="global-button">주문내역</p>
       <div class="vertical-bar"></div>
-      <p class="global-button">
-        장바구니
-      </p>
+      <p class="global-button">장바구니</p>
       <div class="vertical-bar"></div>
-      <p class="global-button">
-        찜목록
-      </p>
+      <p class="global-button">찜목록</p>
     </div>
   </div>
 </div>
-
-
 
 <div class="header-logo">
   <p class="vintage">VINTAGE</p>
   <p class="since">SINCE 1997</p>
 </div>
-
-
 
 <div class="header-global-category">
   <div class="header-global-category-frame">
@@ -49,7 +31,23 @@
         <div class="hamburger-menu-line"></div>
       </div>
       <div class="all-menu">
-
+        <div *ngFor="let category of categories">
+          <p class="category">{{ category.name }}</p>
+          <div *ngFor="let subCategory of category.subCategories">
+            <p class="sub-category">{{ subCategory.name }}</p>
+            <p class="item" *ngFor="let item of subCategory.items">
+              {{ item }}
+            </p>
+          </div>
+        </div>
+        <div>
+          <p class="category">COMMUNITY</p>
+          <div>
+            <p class="sub-category">NOTICE</p>
+            <p class="sub-category">Q&A</p>
+            <p class="sub-category">REVIEW</p>
+          </div>
+        </div>
       </div>
     </div>
     <p class="menu">ABOUT US</p>
@@ -58,26 +56,33 @@
     <div class="menu-wrapper">
       <p class="menu">MEN</p>
       <div class="sub-menu">
-
+        <div
+          style="display: flex; position: relative"
+          *ngFor="let subCategory of categories[0].subCategories"
+        >
+          <p
+            (mouseenter)="hoveredSubCategoryName = subCategory.name"
+            (mouseleave)="hoveredSubCategoryName = null"
+          >
+            {{ subCategory.name }}
+          </p>
+          <div
+            style="position: absolute; top: 10px; right: 10px"
+            *ngIf="hoveredSubCategoryName === subCategory.name"
+          >
+            {{ subCategory.name }}
+          </div>
+        </div>
       </div>
     </div>
     <div class="menu-wrapper">
       <p class="menu">WOMEN</p>
-      <div class="sub-menu">
-
-      </div>
+      <div class="sub-menu"></div>
     </div>
-    <div class="menu-wrapper">
-      <p class="menu">KID</p>
-      <div class="sub-menu">
-
-      </div>
-    </div>
+    <p class="menu">KID</p>
     <div class="menu-wrapper">
       <p class="menu">ACCESORRY</p>
-      <div class="sub-menu">
-
-      </div>
+      <div class="sub-menu"></div>
     </div>
     <p class="menu sale">ON SALE</p>
     <p class="menu">NOTICE</p>
@@ -86,19 +91,8 @@
   </div>
 </div>
 
-
-
-
-
-
 <div class="main">
   <router-outlet></router-outlet>
 </div>
 
-
-
-
-
-<div class="footer">
-
-</div>
+<div class="footer"></div>

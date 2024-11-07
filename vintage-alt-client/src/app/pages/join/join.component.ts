@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './join.component.html',
-  styleUrl: './join.component.css'
+  styleUrl: './join.component.css',
 })
-export class JoinComponent {
-
-}
+export class JoinComponent {}
