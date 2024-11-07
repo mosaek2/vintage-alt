@@ -28,6 +28,12 @@ export class AppComponent implements OnInit {
     this.router.navigate([page]);
   }
 
+  navigateToShop(c1: string = '', c2: string = '', c3: string = '') {
+    this.shouldScrollToTop = true;
+    const url = `shop?c1=${c1}&c2=${c2}&c3=${c3}`;
+    this.router.navigateByUrl(url);
+  }
+
   public categories = [
     {
       name: 'MEN',
@@ -79,7 +85,7 @@ export class AppComponent implements OnInit {
       subCategories: [],
     },
     {
-      name: 'ACCESORRY',
+      name: 'ACC',
       subCategories: [
         {
           name: '모자',

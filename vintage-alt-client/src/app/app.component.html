@@ -32,29 +32,41 @@
       </div>
       <div class="all-menu">
         <div *ngFor="let category of categories">
-          <p class="category">{{ category.name }}</p>
+          <p class="category clickable" (click)="navigateToShop(category.name)">
+            {{ category.name }}
+          </p>
           <div *ngFor="let subCategory of category.subCategories">
-            <p class="sub-category">{{ subCategory.name }}</p>
-            <p class="item" *ngFor="let item of subCategory.items">
-              {{ item }}
+            <p
+              class="sub-category clickable"
+              (click)="navigateToShop(category.name, subCategory.name)"
+            >
+              {{ subCategory.name }}
             </p>
+            <div class="item" *ngFor="let item of subCategory.items">
+              <p
+                class="clickable"
+                (click)="navigateToShop(category.name, subCategory.name, item)"
+              >
+                {{ item }}
+              </p>
+            </div>
           </div>
         </div>
         <div>
           <p class="category">COMMUNITY</p>
           <div>
-            <p class="sub-category">NOTICE</p>
-            <p class="sub-category">Q&A</p>
-            <p class="sub-category">REVIEW</p>
+            <p class="sub-category clickable">NOTICE</p>
+            <p class="sub-category clickable">Q&A</p>
+            <p class="sub-category clickable">REVIEW</p>
           </div>
         </div>
       </div>
     </div>
     <p class="menu">ABOUT US</p>
     <p class="menu">BRAND LIST</p>
-    <p class="menu">NEW ARRIVAL</p>
+    <p class="menu" (click)="navigateToShop('NEW')">NEW ARRIVAL</p>
     <div class="menu-wrapper">
-      <p class="menu">MEN</p>
+      <p class="menu" (click)="navigateToShop('MEN')">MEN</p>
       <div class="sub-menu">
         <div
           style="display: flex"
@@ -64,6 +76,7 @@
             class="sub-category-name"
             (mouseenter)="hoveredSubCategoryName = subCategory.name"
             (mouseleave)="hoveredSubCategoryName = null"
+            (click)="navigateToShop('MEN', subCategory.name)"
           >
             {{ subCategory.name }}
           </p>
@@ -83,7 +96,7 @@
       </div>
     </div>
     <div class="menu-wrapper">
-      <p class="menu">WOMEN</p>
+      <p class="menu" (click)="navigateToShop('WOMEN')">WOMEN</p>
       <div class="sub-menu">
         <div
           style="display: flex"
@@ -93,6 +106,7 @@
             class="sub-category-name"
             (mouseenter)="hoveredSubCategoryName = subCategory.name"
             (mouseleave)="hoveredSubCategoryName = null"
+            (click)="navigateToShop('WOMEN', subCategory.name)"
           >
             {{ subCategory.name }}
           </p>
@@ -111,9 +125,9 @@
         </div>
       </div>
     </div>
-    <p class="menu">KID</p>
+    <p class="menu" (click)="navigateToShop('KID')">KID</p>
     <div class="menu-wrapper">
-      <p class="menu">ACCESORRY</p>
+      <p class="menu" (click)="navigateToShop('ACC')">ACC</p>
       <div class="sub-menu">
         <div
           style="display: flex"
@@ -123,6 +137,7 @@
             class="sub-category-name"
             (mouseenter)="hoveredSubCategoryName = subCategory.name"
             (mouseleave)="hoveredSubCategoryName = null"
+            (click)="navigateToShop('ACC', subCategory.name)"
           >
             {{ subCategory.name }}
           </p>
@@ -141,7 +156,7 @@
         </div>
       </div>
     </div>
-    <p class="menu sale">ON SALE</p>
+    <p class="menu sale" (click)="navigateToShop('SALE')">ON SALE</p>
     <p class="menu">NOTICE</p>
     <p class="menu">Q&A</p>
     <p class="menu">REVIEW</p>
