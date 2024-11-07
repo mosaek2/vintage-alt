@@ -57,32 +57,89 @@
       <p class="menu">MEN</p>
       <div class="sub-menu">
         <div
-          style="display: flex; position: relative"
+          style="display: flex"
           *ngFor="let subCategory of categories[0].subCategories"
         >
           <p
+            class="sub-category-name"
             (mouseenter)="hoveredSubCategoryName = subCategory.name"
             (mouseleave)="hoveredSubCategoryName = null"
           >
             {{ subCategory.name }}
           </p>
-          <div
-            style="position: absolute; top: 10px; right: 10px"
-            *ngIf="hoveredSubCategoryName === subCategory.name"
-          >
-            {{ subCategory.name }}
+          <div class="sub-category-cover-box">
+            <div
+              class="sub-category-cover"
+              [ngClass]="{ show: hoveredSubCategoryName === subCategory.name }"
+              [ngStyle]="{
+                'background-image':
+                  hoveredSubCategoryName === subCategory.name
+                    ? 'url(' + subCategory.cover + ')'
+                    : 'none'
+              }"
+            ></div>
           </div>
         </div>
       </div>
     </div>
     <div class="menu-wrapper">
       <p class="menu">WOMEN</p>
-      <div class="sub-menu"></div>
+      <div class="sub-menu">
+        <div
+          style="display: flex"
+          *ngFor="let subCategory of categories[1].subCategories"
+        >
+          <p
+            class="sub-category-name"
+            (mouseenter)="hoveredSubCategoryName = subCategory.name"
+            (mouseleave)="hoveredSubCategoryName = null"
+          >
+            {{ subCategory.name }}
+          </p>
+          <div class="sub-category-cover-box">
+            <div
+              class="sub-category-cover"
+              [ngClass]="{ show: hoveredSubCategoryName === subCategory.name }"
+              [ngStyle]="{
+                'background-image':
+                  hoveredSubCategoryName === subCategory.name
+                    ? 'url(' + subCategory.cover + ')'
+                    : 'none'
+              }"
+            ></div>
+          </div>
+        </div>
+      </div>
     </div>
     <p class="menu">KID</p>
     <div class="menu-wrapper">
       <p class="menu">ACCESORRY</p>
-      <div class="sub-menu"></div>
+      <div class="sub-menu">
+        <div
+          style="display: flex"
+          *ngFor="let subCategory of categories[3].subCategories"
+        >
+          <p
+            class="sub-category-name"
+            (mouseenter)="hoveredSubCategoryName = subCategory.name"
+            (mouseleave)="hoveredSubCategoryName = null"
+          >
+            {{ subCategory.name }}
+          </p>
+          <div class="sub-category-cover-box">
+            <div
+              class="sub-category-cover"
+              [ngClass]="{ show: hoveredSubCategoryName === subCategory.name }"
+              [ngStyle]="{
+                'background-image':
+                  hoveredSubCategoryName === subCategory.name
+                    ? 'url(' + subCategory.cover + ')'
+                    : 'none'
+              }"
+            ></div>
+          </div>
+        </div>
+      </div>
     </div>
     <p class="menu sale">ON SALE</p>
     <p class="menu">NOTICE</p>
