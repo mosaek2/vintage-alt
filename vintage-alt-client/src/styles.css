@@ -131,3 +131,16 @@ table {
 * {
   box-sizing: border-box;
 }
+
+.page-title {
+  color: 2c2c2c;
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 122px;
+  text-align: center;
+}
+
+button {
+  display: block;
+  cursor: pointer;
+}

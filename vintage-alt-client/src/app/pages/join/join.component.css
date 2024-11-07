@@ -1,0 +1,156 @@
+.section-title {
+  font-weight: bold;
+  font-size: 20px;
+  color: #2c2c2c;
+  width: 1048px;
+  height: 40px;
+  border-bottom: 1px solid #2c2c2c;
+  margin: 82px auto 0px auto;
+  position: relative;
+}
+
+.must-write {
+  position: absolute;
+  top: 15px;
+  right: 0px;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.table-line {
+  width: 1048px;
+  display: flex;
+  margin: 0px auto;
+  border-bottom: 1px solid #ebebeb;
+  color: #2c2c2c;
+  font-size: 14px;
+}
+
+.label-cell {
+  width: 150px;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  background-color: #f5f5f5;
+}
+
+.input-cell {
+  display: flex;
+  align-items: center;
+  padding: 16px 0px 16px 20px;
+}
+
+.dash {
+  width: 20px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-text {
+  color: #717171;
+  margin-left: 10px;
+}
+
+.side-text-password-alert {
+  color: #db0007;
+  margin-left: 10px;
+  display: none;
+}
+
+.input-address-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-1 {
+  width: 224px;
+  height: 40px;
+  border: 1px solid #ebebeb;
+  padding-left: 10px;
+  outline: none;
+  color: #2c2c2c;
+}
+
+.input-1::placeholder {
+  color: #cccccc;
+}
+
+.input-2 {
+  width: 62px;
+  height: 40px;
+  border: 1px solid #ebebeb;
+  padding-left: 10px;
+  outline: none;
+  color: #2c2c2c;
+}
+
+.button-1 {
+  width: 84px;
+  height: 40px;
+  margin-left: 10px;
+  background-color: white;
+  border: 1px solid #ebebeb;
+  color: #717171;
+  font-size: 14px;
+  transition-duration: 0.2s;
+}
+
+.button-1:hover {
+  background-color: #f5f5f5;
+}
+
+.button-2 {
+  margin: 80px auto 0px auto;
+  width: 200px;
+  height: 52px;
+  font-size: 16px;
+  color: #717171;
+  background-color: #f5f5f5;
+  border: none;
+  transition-duration: 0.2s;
+}
+
+.button-2:hover {
+  color: #db0007;
+}
+
+.select-1 {
+  width: 224px;
+  height: 40px;
+  border: 1px solid #ebebeb;
+  padding-left: 6px;
+  outline: none;
+  color: #2c2c2c;
+}
+
+.radio-1 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.radio-1:checked {
+  background-color: #717171;
+  border: 3px solid white;
+  box-shadow: 0 0 0 1.6px #717171;
+}
+
+.label-1 {
+  margin-left: 3px;
+  margin-right: 18px;
+  color: #717171;
+}
+
+.birth-container {
+  display: flex;
+  align-items: center;
+}

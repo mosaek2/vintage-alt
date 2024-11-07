@@ -1,11 +1,11 @@
 .banner {
-  min-width: 1000px;
+  min-width: 1048px;
   height: 318px;
   background-color: #2c2c2c;
 }
 
 .header-global-nav {
-  min-width: 1000px;
+  min-width: 1048px;
   height: 46px;
   border-bottom: 1px solid #ebebeb;
   background-color: white;
@@ -13,7 +13,7 @@
   justify-content: center;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   font-size: 12px;
   color: #717171;
 }
@@ -62,7 +62,7 @@
 }
 
 .header-logo {
-  min-width: 1000px;
+  min-width: 1048px;
   height: 140px;
   border-bottom: 1px solid #717171;
   display: flex;
@@ -86,11 +86,12 @@
 }
 
 .header-global-category {
-  min-width: 1000px;
+  min-width: 1048px;
   height: 54px;
   border-bottom: 1px solid #ebebeb;
   background-color: white;
   position: sticky;
+  z-index: 100;
   top: 46px;
   display: flex;
   justify-content: center;
@@ -162,7 +163,7 @@
 }
 
 .all-menu {
-  min-width: 1000px;
+  min-width: 1048px;
   min-height: 400px;
   border: 1px solid #717171;
   background-color: white;
@@ -186,4 +187,17 @@
 
 .hamburger-menu-wrapper:hover .hamburger-menu-line {
   background-color: #ebebeb;
+}
+
+.main {
+  min-width: 1048px;
+  min-height: calc(100vh - 240px - 200px);
+}
+
+.footer {
+  min-width: 1048px;
+  height: 402px;
+  background-color: #fbfbfb;
+  border-top: 1px solid #ebebeb;
+  margin-top: 200px;
 }

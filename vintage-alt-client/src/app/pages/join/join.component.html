@@ -1,1 +1,161 @@
-<p>join works!</p>
+<p class="page-title">회원가입</p>
+
+
+
+<div class="section-title">
+  기본정보
+  <p class="must-write">
+    <span style="color: #db0007;">*&nbsp;</span>
+    <span style="color: #717171">필수입력사항</span>
+  </p>
+</div>
+
+<div class="table-line">
+  <div class="label-cell">
+    <span>이메일 주소&nbsp;</span>
+    <span style="color: #db0007;">*</span>
+  </div>
+  <div class="input-cell">
+    <input class="input-1">
+    <button class="button-1">중복 확인</button>
+  </div>
+</div>
+
+<div class="table-line">
+  <div class="label-cell">
+    <span>비밀번호&nbsp;</span>
+    <span style="color: #db0007;">*</span>
+  </div>
+  <div class="input-cell">
+    <input class="input-1">
+    <p class="side-text">(영문, 숫자, 특수문자로 이루어진 8자 ~ 16자)</p>
+  </div>
+</div>
+
+<div class="table-line">
+  <div class="label-cell">
+    <span>비밀번호 확인&nbsp;</span>
+    <span style="color: #db0007;">*</span>
+  </div>
+  <div class="input-cell">
+    <input class="input-1">
+    <p class="side-text-password-alert">비밀번호가 일치하지 않습니다.</p>
+  </div>
+</div>
+
+<div class="table-line">
+  <div class="label-cell">
+    <span>이름&nbsp;</span>
+    <span style="color: #db0007;">*</span>
+  </div>
+  <div class="input-cell">
+    <input class="input-1">
+  </div>
+</div>
+
+<div class="table-line">
+  <div class="label-cell">
+    <span>성별&nbsp;</span>
+    <span style="color: #db0007;">*</span>
+  </div>
+  <div class="input-cell">
+    <input type="radio" class="radio-1" name="gender" id="male">
+    <label for="male" class="label-1">남자</label>
+    <input type="radio" class="radio-1" name="gender" id="female">
+    <label for="female" class="label-1">여자</label>
+  </div>
+</div>
+
+<div class="table-line">
+  <div class="label-cell">
+    <span>생년월일&nbsp;</span>
+    <span style="color: #db0007;">*</span>
+  </div>
+  <div class="input-cell">
+    <input type="radio" class="radio-1" name="solar" id="y">
+    <label for="y" class="label-1">양력</label>
+    <input type="radio" class="radio-1" name="solar" id="n">
+    <label for="n" class="label-1">음력</label>
+    <div class="birth-container">
+      <input class="input-2">
+      <p class="side-text" style="margin-right: 18px;">년</p>
+      <input class="input-2">
+      <p class="side-text" style="margin-right: 18px;">월</p>
+      <input class="input-2">
+      <p class="side-text" style="margin-right: 18px;">일</p>
+    </div>
+  </div>
+</div>
+
+<div class="table-line">
+  <div class="label-cell">
+    <span>휴대전화번호&nbsp;</span>
+    <span style="color: #db0007;">*</span>
+  </div>
+  <div class="input-cell">
+    <input class="input-2">
+    <p class="dash">-</p>
+    <input class="input-2">
+    <p class="dash">-</p>
+    <input class="input-2">
+  </div>
+</div>
+
+<div class="table-line">
+  <div class="label-cell">
+    <span>일반전화번호</span>
+  </div>
+  <div class="input-cell">
+    <input class="input-2">
+    <p class="dash">-</p>
+    <input class="input-2">
+    <p class="dash">-</p>
+    <input class="input-2">
+  </div>
+</div>
+
+<div class="table-line">
+  <div class="label-cell">
+    <span>주소&nbsp;</span>
+    <span style="color: #db0007;">*</span>
+  </div>
+  <div class="input-cell">
+    <div class="input-address-container">
+      <div style="display: flex;">
+        <input class="input-1" style="width: 110px;" placeholder="우편번호">
+        <button class="button-1">주소 찾기</button>
+      </div>
+      <input class="input-1" style="width: 500px;" placeholder="주소">
+      <input class="input-1" style="width: 500px;" placeholder="나머지 주소">
+    </div>
+  </div>
+</div>
+
+
+
+<div class="section-title">
+  추가정보
+</div>
+
+<div class="table-line">
+  <div class="label-cell">
+    <span>환불계좌정보&nbsp;</span>
+    <span style="color: #db0007;">*</span>
+  </div>
+  <div class="input-cell">
+    <div class="input-address-container">
+      <input class="input-1" placeholder="예금주">
+      <select class="select-1">
+        <option>은행명</option>
+        <option>은행명</option>
+        <option>은행명</option>
+        <option>은행명</option>
+      </select>
+      <input class="input-1" placeholder="계좌번호">
+    </div>
+  </div>
+</div>
+
+
+
+<button class="button-2">가입하기</button>
