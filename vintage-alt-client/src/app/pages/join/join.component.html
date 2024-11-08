@@ -14,7 +14,7 @@
     <span style="color: #db0007">*</span>
   </div>
   <div class="input-cell">
-    <input class="input-1" />
+    <input class="input-1" type="email" [(ngModel)]="email" />
     <button class="button-1">중복 확인</button>
   </div>
 </div>
@@ -25,7 +25,12 @@
     <span style="color: #db0007">*</span>
   </div>
   <div class="input-cell">
-    <input class="input-1" />
+    <input
+      class="input-1"
+      type="password"
+      [(ngModel)]="password"
+      (blur)="onPasswordBlur()"
+    />
     <p class="side-text">(영문, 숫자, 특수문자로 이루어진 8자 ~ 16자)</p>
   </div>
 </div>
@@ -36,8 +41,20 @@
     <span style="color: #db0007">*</span>
   </div>
   <div class="input-cell">
-    <input class="input-1" />
-    <p class="side-text-password-alert">비밀번호가 일치하지 않습니다.</p>
+    <input
+      class="input-1"
+      type="password"
+      [(ngModel)]="passwordCheck"
+      (blur)="onPasswordCheckBlur()"
+    />
+    <p
+      *ngIf="
+        password !== '' && passwordCheck !== '' && isPasswordMatch === false
+      "
+      class="side-text-password-alert"
+    >
+      비밀번호가 일치하지 않습니다.
+    </p>
   </div>
 </div>
 
@@ -47,7 +64,7 @@
     <span style="color: #db0007">*</span>
   </div>
   <div class="input-cell">
-    <input class="input-1" />
+    <input class="input-1" [(ngModel)]="name" />
   </div>
 </div>
 
@@ -57,9 +74,23 @@
     <span style="color: #db0007">*</span>
   </div>
   <div class="input-cell">
-    <input type="radio" class="radio-1" name="gender" id="male" />
+    <input
+      type="radio"
+      class="radio-1"
+      name="gender"
+      id="male"
+      value="male"
+      [(ngModel)]="gender"
+    />
     <label for="male" class="label-1">남자</label>
-    <input type="radio" class="radio-1" name="gender" id="female" />
+    <input
+      type="radio"
+      class="radio-1"
+      name="gender"
+      id="female"
+      value="female"
+      [(ngModel)]="gender"
+    />
     <label for="female" class="label-1">여자</label>
   </div>
 </div>
@@ -70,16 +101,30 @@
     <span style="color: #db0007">*</span>
   </div>
   <div class="input-cell">
-    <input type="radio" class="radio-1" name="solar" id="y" />
+    <input
+      type="radio"
+      class="radio-1"
+      name="solar"
+      id="y"
+      value="y"
+      [(ngModel)]="solar"
+    />
     <label for="y" class="label-1">양력</label>
-    <input type="radio" class="radio-1" name="solar" id="n" />
+    <input
+      type="radio"
+      class="radio-1"
+      name="solar"
+      id="n"
+      value="n"
+      [(ngModel)]="solar"
+    />
     <label for="n" class="label-1">음력</label>
     <div class="birth-container">
-      <input class="input-2" />
+      <input class="input-2" [(ngModel)]="year" />
       <p class="side-text" style="margin-right: 18px">년</p>
-      <input class="input-2" />
+      <input class="input-2" [(ngModel)]="month" />
       <p class="side-text" style="margin-right: 18px">월</p>
-      <input class="input-2" />
+      <input class="input-2" [(ngModel)]="day" />
       <p class="side-text" style="margin-right: 18px">일</p>
     </div>
   </div>
@@ -91,11 +136,11 @@
     <span style="color: #db0007">*</span>
   </div>
   <div class="input-cell">
-    <input class="input-2" />
+    <input class="input-2" [(ngModel)]="phone1" />
     <p class="dash">-</p>
-    <input class="input-2" />
+    <input class="input-2" [(ngModel)]="phone2" />
     <p class="dash">-</p>
-    <input class="input-2" />
+    <input class="input-2" [(ngModel)]="phone3" />
     <button class="button-1">중복 확인</button>
   </div>
 </div>
@@ -105,11 +150,11 @@
     <span>일반전화번호</span>
   </div>
   <div class="input-cell">
-    <input class="input-2" />
+    <input class="input-2" [(ngModel)]="phoneAlt1" />
     <p class="dash">-</p>
-    <input class="input-2" />
+    <input class="input-2" [(ngModel)]="phoneAlt2" />
     <p class="dash">-</p>
-    <input class="input-2" />
+    <input class="input-2" [(ngModel)]="phoneAlt3" />
   </div>
 </div>
 
@@ -121,11 +166,26 @@
   <div class="input-cell">
     <div class="input-address-container">
       <div style="display: flex">
-        <input class="input-1" style="width: 110px" placeholder="우편번호" />
+        <input
+          class="input-1"
+          style="width: 110px"
+          placeholder="우편번호"
+          [(ngModel)]="zipcode"
+        />
         <button class="button-1">주소 찾기</button>
       </div>
-      <input class="input-1" style="width: 500px" placeholder="주소" />
-      <input class="input-1" style="width: 500px" placeholder="나머지 주소" />
+      <input
+        class="input-1"
+        style="width: 500px"
+        placeholder="주소"
+        [(ngModel)]="address"
+      />
+      <input
+        class="input-1"
+        style="width: 500px"
+        placeholder="나머지 주소"
+        [(ngModel)]="addressDetail"
+      />
     </div>
   </div>
 </div>
@@ -133,15 +193,12 @@
 <div class="section-title">추가정보</div>
 
 <div class="table-line">
-  <div class="label-cell">
-    <span>환불계좌정보&nbsp;</span>
-    <span style="color: #db0007">*</span>
-  </div>
+  <div class="label-cell">환불계좌정보</div>
   <div class="input-cell">
     <div class="input-address-container">
-      <input class="input-1" placeholder="예금주" />
-      <select class="select-1">
-        <option>은행명</option>
+      <input class="input-1" placeholder="예금주" [(ngModel)]="holder" />
+      <select class="select-1" [(ngModel)]="bank">
+        <option value="">은행명</option>
         <option>국민은행</option>
         <option>신한은행</option>
         <option>하나은행</option>
@@ -151,9 +208,9 @@
         <option>IBK기업은행</option>
         <option>수협은행</option>
       </select>
-      <input class="input-1" placeholder="계좌번호" />
+      <input class="input-1" placeholder="계좌번호" [(ngModel)]="account" />
     </div>
   </div>
 </div>
 
-<button class="button-2">가입하기</button>
+<button class="button-2" (click)="onClickJoinButton()">가입하기</button>

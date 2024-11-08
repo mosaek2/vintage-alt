@@ -38,7 +38,10 @@ export class AppComponent implements OnInit {
     const url = `shop?c1=${c1}&c2=${c2}&c3=${c3}`;
     this.router.navigateByUrl(url);
     this.closeMenu();
+    this.hoveredSubCategoryName = null;
   }
+
+  public hoveredSubCategoryName: string | null = null;
 
   public categories = [
     {
@@ -47,17 +50,17 @@ export class AppComponent implements OnInit {
         {
           name: 'OUTER',
           items: ['자켓/점퍼', '바람막이/저지', '코트'],
-          cover: '/images/category/men-outer.png',
+          cover: '/images/category/men-outer.jpeg',
         },
         {
           name: 'TOP',
           items: ['티셔츠', '맨투맨/후드', '셔츠'],
-          cover: '/images/category/men-top.png',
+          cover: '/images/category/men-top.jpeg',
         },
         {
           name: 'BOTTOM',
           items: ['청바지', '바지'],
-          cover: '/images/category/men-bottom.png',
+          cover: '/images/category/men-bottom.jpeg',
         },
       ],
     },
@@ -67,22 +70,22 @@ export class AppComponent implements OnInit {
         {
           name: 'OUTER',
           items: ['자켓/점퍼', '바람막이/저지', '코트'],
-          cover: '/images/category/women-outer.png',
+          cover: '/images/category/women-outer.jpeg',
         },
         {
           name: 'TOP',
           items: ['티셔츠', '맨투맨/후드', '셔츠/블라우스'],
-          cover: '/images/category/women-top.png',
+          cover: '/images/category/women-top.jpeg',
         },
         {
           name: 'BOTTOM',
           items: ['청바지', '바지', '스커트'],
-          cover: '/images/category/women-bottom.png',
+          cover: '/images/category/women-bottom.jpeg',
         },
         {
           name: 'DRESS',
           items: [],
-          cover: '/images/category/women-dress.png',
+          cover: '/images/category/women-dress.jpeg',
         },
       ],
     },
@@ -96,31 +99,29 @@ export class AppComponent implements OnInit {
         {
           name: '모자',
           items: [],
-          cover: '/images/category/acc-cap.png',
+          cover: '/images/category/acc-cap.jpeg',
         },
         {
           name: '신발',
           items: [],
-          cover: '/images/category/acc-shoes.png',
+          cover: '/images/category/acc-shoes.jpeg',
         },
         {
           name: '가방',
           items: [],
-          cover: '/images/category/acc-bag.png',
+          cover: '/images/category/acc-bag.jpeg',
         },
         {
           name: '넥타이',
           items: [],
-          cover: '/images/category/acc-tie.png',
+          cover: '/images/category/acc-tie.jpeg',
         },
         {
           name: 'ETC',
           items: [],
-          cover: '/images/category/acc-etc.png',
+          cover: '/images/category/acc-etc.jpeg',
         },
       ],
     },
   ];
-
-  public hoveredSubCategoryName: string | null = null;
 }

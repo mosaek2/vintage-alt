@@ -1,1 +1,27 @@
 <p class="page-title">로그인</p>
+
+<div class="login-container">
+  <input
+    class="input-1"
+    type="email"
+    placeholder="이메일 주소"
+    [(ngModel)]="email"
+  />
+  <input
+    class="input-1"
+    type="password"
+    placeholder="비밀번호"
+    style="margin-top: 26px"
+    [(ngModel)]="password"
+  />
+
+  <button class="button-1" (click)="onClickLoginButton()">확인</button>
+
+  <div class="function-container">
+    <p>아이디 찾기</p>
+    <div class="vertical-line"></div>
+    <p>비밀번호 찾기</p>
+    <div class="vertical-line"></div>
+    <p>회원가입</p>
+  </div>
+</div>
