@@ -25,12 +25,12 @@
 <div class="header-global-category">
   <div class="header-global-category-frame">
     <div class="hamburger-menu-wrapper">
-      <div class="hamburger-menu">
+      <div class="hamburger-menu" (mouseenter)="menuVisable = true">
         <div class="hamburger-menu-line"></div>
         <div class="hamburger-menu-line"></div>
         <div class="hamburger-menu-line"></div>
       </div>
-      <div class="all-menu">
+      <div class="all-menu" *ngIf="menuVisable">
         <div *ngFor="let category of categories">
           <p class="category clickable" (click)="navigateToShop(category.name)">
             {{ category.name }}
@@ -66,8 +66,14 @@
     <p class="menu">BRAND LIST</p>
     <p class="menu" (click)="navigateToShop('NEW')">NEW ARRIVAL</p>
     <div class="menu-wrapper">
-      <p class="menu" (click)="navigateToShop('MEN')">MEN</p>
-      <div class="sub-menu">
+      <p
+        class="menu"
+        (click)="navigateToShop('MEN')"
+        (mouseenter)="menuVisable = true"
+      >
+        MEN
+      </p>
+      <div class="sub-menu" *ngIf="menuVisable">
         <div
           style="display: flex"
           *ngFor="let subCategory of categories[0].subCategories"
@@ -96,8 +102,14 @@
       </div>
     </div>
     <div class="menu-wrapper">
-      <p class="menu" (click)="navigateToShop('WOMEN')">WOMEN</p>
-      <div class="sub-menu">
+      <p
+        class="menu"
+        (click)="navigateToShop('WOMEN')"
+        (mouseenter)="menuVisable = true"
+      >
+        WOMEN
+      </p>
+      <div class="sub-menu" *ngIf="menuVisable">
         <div
           style="display: flex"
           *ngFor="let subCategory of categories[1].subCategories"
@@ -127,8 +139,14 @@
     </div>
     <p class="menu" (click)="navigateToShop('KID')">KID</p>
     <div class="menu-wrapper">
-      <p class="menu" (click)="navigateToShop('ACC')">ACC</p>
-      <div class="sub-menu">
+      <p
+        class="menu"
+        (click)="navigateToShop('ACC')"
+        (mouseenter)="menuVisable = true"
+      >
+        ACC
+      </p>
+      <div class="sub-menu" *ngIf="menuVisable">
         <div
           style="display: flex"
           *ngFor="let subCategory of categories[3].subCategories"
