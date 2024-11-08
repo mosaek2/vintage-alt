@@ -1,5 +1,9 @@
-{{ selectedC1 }} {{ selectedC2 }} {{ selectedC3 }}
-<div class="category-container">
+<p class="page-title">{{ selectedC1 }}</p>
+
+<div
+  class="category-container"
+  *ngIf="selectedC1 !== 'NEW' && selectedC1 !== 'SALE'"
+>
   <select [(ngModel)]="selectedC1" (change)="onC1Change()">
     <option *ngFor="let c1 of c1s" [value]="c1.name">
       {{ c1.name }}

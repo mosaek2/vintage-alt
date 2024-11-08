@@ -29,14 +29,16 @@ export class ShopComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
       this.selectedC1 = params['c1'];
-      this.c2s = this.c1s.find((c1) => c1.name === this.selectedC1).c2s;
+      if (this.selectedC1 !== 'NEW' && this.selectedC1 !== 'SALE') {
+        this.c2s = this.c1s.find((c1) => c1.name === this.selectedC1).c2s;
 
-      this.selectedC2 = params['c2'];
-      if (this.selectedC2 !== '') {
-        this.c3s = this.c2s.find((c2) => c2.name === this.selectedC2).c3s;
+        this.selectedC2 = params['c2'];
+        if (this.selectedC2 !== '') {
+          this.c3s = this.c2s.find((c2) => c2.name === this.selectedC2).c3s;
+        }
+
+        this.selectedC3 = params['c3'];
       }
-
-      this.selectedC3 = params['c3'];
     });
   }
 
