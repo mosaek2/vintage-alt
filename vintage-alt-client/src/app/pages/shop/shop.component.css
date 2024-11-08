@@ -1,0 +1,6 @@
+.category-container {
+  width: 670px;
+  margin: 122px auto 0px auto;
+  display: flex;
+  gap: 35px;
+}

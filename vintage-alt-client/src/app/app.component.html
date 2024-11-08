@@ -31,33 +31,30 @@
         <div class="hamburger-menu-line"></div>
       </div>
       <div class="all-menu" *ngIf="menuVisable">
-        <div *ngFor="let category of categories">
-          <p class="category clickable" (click)="navigateToShop(category.name)">
-            {{ category.name }}
+        <div *ngFor="let c1 of c1s">
+          <p class="c1 clickable" (click)="navigateToShop(c1.name)">
+            {{ c1.name }}
           </p>
-          <div *ngFor="let subCategory of category.subCategories">
-            <p
-              class="sub-category clickable"
-              (click)="navigateToShop(category.name, subCategory.name)"
-            >
-              {{ subCategory.name }}
+          <div *ngFor="let c2 of c1.c2s">
+            <p class="c2 clickable" (click)="navigateToShop(c1.name, c2.name)">
+              {{ c2.name }}
             </p>
-            <div class="item" *ngFor="let item of subCategory.items">
+            <div class="c3" *ngFor="let c3 of c2.c3s">
               <p
                 class="clickable"
-                (click)="navigateToShop(category.name, subCategory.name, item)"
+                (click)="navigateToShop(c1.name, c2.name, c3)"
               >
-                {{ item }}
+                {{ c3 }}
               </p>
             </div>
           </div>
         </div>
         <div>
-          <p class="category">COMMUNITY</p>
+          <p class="c1">COMMUNITY</p>
           <div>
-            <p class="sub-category clickable">NOTICE</p>
-            <p class="sub-category clickable">Q&A</p>
-            <p class="sub-category clickable">REVIEW</p>
+            <p class="c2 clickable">NOTICE</p>
+            <p class="c2 clickable">Q&A</p>
+            <p class="c2 clickable">REVIEW</p>
           </div>
         </div>
       </div>
@@ -74,27 +71,22 @@
         MEN
       </p>
       <div class="sub-menu" *ngIf="menuVisable">
-        <div
-          style="display: flex"
-          *ngFor="let subCategory of categories[0].subCategories"
-        >
+        <div style="display: flex" *ngFor="let c2 of c1s[0].c2s">
           <p
-            class="sub-category-name"
-            (mouseenter)="hoveredSubCategoryName = subCategory.name"
-            (mouseleave)="hoveredSubCategoryName = null"
-            (click)="navigateToShop('MEN', subCategory.name)"
+            class="c2-name"
+            (mouseenter)="hoveredC2Name = c2.name"
+            (mouseleave)="hoveredC2Name = null"
+            (click)="navigateToShop('MEN', c2.name)"
           >
-            {{ subCategory.name }}
+            {{ c2.name }}
           </p>
-          <div class="sub-category-cover-box">
+          <div class="c2-cover-box">
             <div
-              class="sub-category-cover"
-              [ngClass]="{ show: hoveredSubCategoryName === subCategory.name }"
+              class="c2-cover"
+              [ngClass]="{ show: hoveredC2Name === c2.name }"
               [ngStyle]="{
                 'background-image':
-                  hoveredSubCategoryName === subCategory.name
-                    ? 'url(' + subCategory.cover + ')'
-                    : 'none'
+                  hoveredC2Name === c2.name ? 'url(' + c2.cover + ')' : 'none'
               }"
             ></div>
           </div>
@@ -110,27 +102,22 @@
         WOMEN
       </p>
       <div class="sub-menu" *ngIf="menuVisable">
-        <div
-          style="display: flex"
-          *ngFor="let subCategory of categories[1].subCategories"
-        >
+        <div style="display: flex" *ngFor="let c2 of c1s[1].c2s">
           <p
-            class="sub-category-name"
-            (mouseenter)="hoveredSubCategoryName = subCategory.name"
-            (mouseleave)="hoveredSubCategoryName = null"
-            (click)="navigateToShop('WOMEN', subCategory.name)"
+            class="c2-name"
+            (mouseenter)="hoveredC2Name = c2.name"
+            (mouseleave)="hoveredC2Name = null"
+            (click)="navigateToShop('MEN', c2.name)"
           >
-            {{ subCategory.name }}
+            {{ c2.name }}
           </p>
-          <div class="sub-category-cover-box">
+          <div class="c2-cover-box">
             <div
-              class="sub-category-cover"
-              [ngClass]="{ show: hoveredSubCategoryName === subCategory.name }"
+              class="c2-cover"
+              [ngClass]="{ show: hoveredC2Name === c2.name }"
               [ngStyle]="{
                 'background-image':
-                  hoveredSubCategoryName === subCategory.name
-                    ? 'url(' + subCategory.cover + ')'
-                    : 'none'
+                  hoveredC2Name === c2.name ? 'url(' + c2.cover + ')' : 'none'
               }"
             ></div>
           </div>
@@ -147,27 +134,22 @@
         ACC
       </p>
       <div class="sub-menu" *ngIf="menuVisable">
-        <div
-          style="display: flex"
-          *ngFor="let subCategory of categories[3].subCategories"
-        >
+        <div style="display: flex" *ngFor="let c2 of c1s[3].c2s">
           <p
-            class="sub-category-name"
-            (mouseenter)="hoveredSubCategoryName = subCategory.name"
-            (mouseleave)="hoveredSubCategoryName = null"
-            (click)="navigateToShop('ACC', subCategory.name)"
+            class="c2-name"
+            (mouseenter)="hoveredC2Name = c2.name"
+            (mouseleave)="hoveredC2Name = null"
+            (click)="navigateToShop('MEN', c2.name)"
           >
-            {{ subCategory.name }}
+            {{ c2.name }}
           </p>
-          <div class="sub-category-cover-box">
+          <div class="c2-cover-box">
             <div
-              class="sub-category-cover"
-              [ngClass]="{ show: hoveredSubCategoryName === subCategory.name }"
+              class="c2-cover"
+              [ngClass]="{ show: hoveredC2Name === c2.name }"
               [ngStyle]="{
                 'background-image':
-                  hoveredSubCategoryName === subCategory.name
-                    ? 'url(' + subCategory.cover + ')'
-                    : 'none'
+                  hoveredC2Name === c2.name ? 'url(' + c2.cover + ')' : 'none'
               }"
             ></div>
           </div>

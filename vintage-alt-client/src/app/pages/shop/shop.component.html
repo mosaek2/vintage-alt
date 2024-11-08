@@ -1,1 +1,18 @@
-<p class="page-title">{{ c1 }}</p>
+{{ selectedC1 }} {{ selectedC2 }} {{ selectedC3 }}
+<div class="category-container">
+  <select [(ngModel)]="selectedC1" (change)="onC1Change()">
+    <option *ngFor="let c1 of c1s" [value]="c1.name">
+      {{ c1.name }}
+    </option>
+  </select>
+  <select [(ngModel)]="selectedC2" (change)="onC2Change()">
+    <option value="">-</option>
+    <option *ngFor="let c2 of c2s" [value]="c2.name">
+      {{ c2.name }}
+    </option>
+  </select>
+  <select [(ngModel)]="selectedC3" [disabled]="!selectedC2">
+    <option value="">-</option>
+    <option *ngFor="let c3 of c3s">{{ c3 }}</option>
+  </select>
+</div>

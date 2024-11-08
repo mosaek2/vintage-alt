@@ -1,31 +1,53 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ItemService } from '../../services/item.service';
 
 @Component({
   selector: 'app-shop',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css',
 })
 export class ShopComponent implements OnInit {
-  c1: string | null = null;
-  c2: string | null = null;
-  c3: string | null = null;
-  page: number = 1;
-  sort: string = 'new';
+  public selectedC1: string = '';
+  public selectedC2: string = '';
+  public selectedC3: string = '';
+  public page: number = 1;
+  public sort: string = 'new';
 
-  constructor(
-    private itemService: ItemService,
-    private route: ActivatedRoute
-  ) {}
+  public c1s: any[] = [];
+  public c2s: any[] = [];
+  public c3s: any[] = [];
+
+  constructor(private itemService: ItemService, private route: ActivatedRoute) {
+    this.c1s = this.itemService.getC1s();
+  }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
-      this.c1 = params['c1'];
-      this.c2 = params['c2'];
-      this.c3 = params['c3'];
+      this.selectedC1 = params['c1'];
+      this.c2s = this.c1s.find((c1) => c1.name === this.selectedC1).c2s;
+
+      this.selectedC2 = params['c2'];
+      if (this.selectedC2 !== '') {
+        this.c3s = this.c2s.find((c2) => c2.name === this.selectedC2).c3s;
+      }
+
+      this.selectedC3 = params['c3'];
     });
+  }
+
+  onC1Change(): void {
+    this.c2s = this.c1s.find((c1) => c1.name === this.selectedC1).c2s;
+    this.selectedC2 = '';
+    this.selectedC3 = '';
+    this.c3s = [];
+  }
+  onC2Change(): void {
+    this.c3s = this.c2s.find((c2) => c2.name === this.selectedC2).c3s;
+    this.selectedC3 = '';
   }
 }
