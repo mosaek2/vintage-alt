@@ -40,6 +40,10 @@ export class ShopComponent implements OnInit {
         this.selectedC3 = params['c3'];
       }
     });
+
+    console.log(this.selectedC1);
+    console.log(this.selectedC2);
+    console.log(this.selectedC3);
   }
 
   onC1Change(): void {
