@@ -1,6 +1,31 @@
 .category-container {
   width: 670px;
-  margin: 122px auto 0px auto;
+  margin: 0px auto;
   display: flex;
   gap: 35px;
+}
+
+.sort-container {
+  width: 1384px;
+  display: flex;
+  justify-content: end;
+  margin: 120px auto 30px auto;
+}
+
+.selector {
+  width: 200px;
+  height: 40px;
+  border: 1px solid #ebebeb;
+  font-size: 14px;
+  color: #717171;
+  padding-left: 15px;
+}
+
+.item-container {
+  width: 1384px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 26px;
+  row-gap: 90px;
+  margin: 0px auto;
 }

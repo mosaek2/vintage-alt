@@ -3,14 +3,14 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class ItemService {
+export class CategoryService {
   public c1s = [
     {
       name: 'MEN',
       c2s: [
         {
           name: 'OUTER',
-          c3s: ['자켓/점퍼', '바람막이/저지', '코트'],
+          c3s: ['자켓/점퍼', '바람막이/져지', '코트'],
           cover: '/images/category/men-outer.jpeg',
         },
         {
@@ -30,12 +30,12 @@ export class ItemService {
       c2s: [
         {
           name: 'OUTER',
-          c3s: ['자켓/점퍼', '바람막이/저지', '코트'],
+          c3s: ['자켓/점퍼', '바람막이/져지', '코트'],
           cover: '/images/category/women-outer.jpeg',
         },
         {
           name: 'TOP',
-          c3s: ['티셔츠', '맨투맨/후드', '셔츠/블라우스'],
+          c3s: ['티셔츠', '맨투맨/후드', '셔츠'],
           cover: '/images/category/women-top.jpeg',
         },
         {

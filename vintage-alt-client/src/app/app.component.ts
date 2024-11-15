@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
-import { ItemService } from './services/item.service';
+import { CategoryService } from './services/category/category.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   private shouldScrollToTop = false;
 
   public c1s: any[] = [];
-  constructor(private router: Router, private itemService: ItemService) {
+  constructor(private router: Router, private itemService: CategoryService) {
     this.c1s = this.itemService.getC1s();
   }
 

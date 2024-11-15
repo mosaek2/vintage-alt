@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { ItemService } from '../../services/item.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CategoryService } from '../../services/category/category.service';
+import { ItemService } from '../../services/item/item.service';
 
 @Component({
   selector: 'app-shop',
@@ -22,8 +23,13 @@ export class ShopComponent implements OnInit {
   public c2s: any[] = [];
   public c3s: any[] = [];
 
-  constructor(private itemService: ItemService, private route: ActivatedRoute) {
-    this.c1s = this.itemService.getC1s();
+  constructor(
+    private categoryService: CategoryService,
+    private itemService: ItemService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
+    this.c1s = this.categoryService.getC1s();
   }
 
   ngOnInit(): void {
@@ -39,11 +45,21 @@ export class ShopComponent implements OnInit {
 
         this.selectedC3 = params['c3'];
       }
-    });
 
-    console.log(this.selectedC1);
-    console.log(this.selectedC2);
-    console.log(this.selectedC3);
+      this.itemService
+        .getItems(this.selectedC1, this.selectedC2, this.selectedC3, this.sort)
+        .subscribe({
+          next: (data) => {
+            console.log(data);
+          },
+          error: (error) => {
+            console.log(error.error);
+          },
+          complete: () => {
+            console.log('요청 완료');
+          },
+        });
+    });
   }
 
   onC1Change(): void {
@@ -51,9 +67,21 @@ export class ShopComponent implements OnInit {
     this.selectedC2 = '';
     this.selectedC3 = '';
     this.c3s = [];
+    const url = `shop?c1=${this.selectedC1}&c2=${this.selectedC2}&c3=${this.selectedC3}`;
+    this.router.navigateByUrl(url);
   }
   onC2Change(): void {
     this.c3s = this.c2s.find((c2) => c2.name === this.selectedC2).c3s;
     this.selectedC3 = '';
+    const url = `shop?c1=${this.selectedC1}&c2=${this.selectedC2}&c3=${this.selectedC3}`;
+    this.router.navigateByUrl(url);
+  }
+  onC3Change(): void {
+    const url = `shop?c1=${this.selectedC1}&c2=${this.selectedC2}&c3=${this.selectedC3}`;
+    this.router.navigateByUrl(url);
+  }
+  onSortChange(): void {
+    const url = `shop?c1=${this.selectedC1}&c2=${this.selectedC2}&c3=${this.selectedC3}&sort=${this.sort}`;
+    this.router.navigateByUrl(url);
   }
 }

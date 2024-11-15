@@ -1,22 +1,55 @@
-<p class="page-title">{{ selectedC1 }}</p>
+<p class="page-title" style="margin-bottom: 122px">{{ selectedC1 }}</p>
 
 <div
   class="category-container"
   *ngIf="selectedC1 !== 'NEW' && selectedC1 !== 'SALE'"
 >
-  <select [(ngModel)]="selectedC1" (change)="onC1Change()">
+  <select class="selector" [(ngModel)]="selectedC1" (change)="onC1Change()">
     <option *ngFor="let c1 of c1s" [value]="c1.name">
       {{ c1.name }}
     </option>
   </select>
-  <select [(ngModel)]="selectedC2" (change)="onC2Change()">
+  <select class="selector" [(ngModel)]="selectedC2" (change)="onC2Change()">
     <option value="">-</option>
     <option *ngFor="let c2 of c2s" [value]="c2.name">
       {{ c2.name }}
     </option>
   </select>
-  <select [(ngModel)]="selectedC3" [disabled]="!selectedC2">
+  <select
+    class="selector"
+    [(ngModel)]="selectedC3"
+    [disabled]="!selectedC2"
+    (change)="onC3Change()"
+  >
     <option value="">-</option>
     <option *ngFor="let c3 of c3s">{{ c3 }}</option>
   </select>
+</div>
+
+<div class="sort-container">
+  <select
+    class="selector"
+    style="width: 133px"
+    [(ngModel)]="sort"
+    (change)="onSortChange()"
+  >
+    <option value="new">신상품순</option>
+    <option value="low">낮은가격순</option>
+    <option value="high">높은가격순</option>
+    <option value="discount">할인율순</option>
+  </select>
+</div>
+
+<div class="item-container">
+  <div style="width: 256px; height: 333px; background-color: red"></div>
+  <div style="width: 256px; height: 333px; background-color: red"></div>
+  <div style="width: 256px; height: 333px; background-color: red"></div>
+  <div style="width: 256px; height: 333px; background-color: red"></div>
+  <div style="width: 256px; height: 333px; background-color: red"></div>
+  <div style="width: 256px; height: 333px; background-color: red"></div>
+  <div style="width: 256px; height: 333px; background-color: red"></div>
+  <div style="width: 256px; height: 333px; background-color: red"></div>
+  <div style="width: 256px; height: 333px; background-color: red"></div>
+  <div style="width: 256px; height: 333px; background-color: red"></div>
+  <div style="width: 256px; height: 333px; background-color: red"></div>
 </div>
