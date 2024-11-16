@@ -1,0 +1,16 @@
+<div class="shop-box">
+  <div class="cover-frame" (click)="goToDetail(item.uid)">
+    <img [src]="item.cover" alt="item.name" class="cover" />
+  </div>
+  <p class="item-info">[{{ item.brand }}] {{ item.name }} ({{ item.size }})</p>
+  <p class="price-info">
+    <span class="price" *ngIf="item.discountRate !== 1">
+      {{ formattedPrice }}원
+    </span>
+    <span class="discount-rate" *ngIf="item.discountRate !== 1">
+      {{ discountRate }}%
+    </span>
+    <span class="final-price">{{ formattedFinalPrice }}원</span>
+  </p>
+  <div *ngIf="item.discountRate !== 1" class="sale-mark">SALE</div>
+</div>

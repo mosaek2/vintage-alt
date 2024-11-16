@@ -1,0 +1,60 @@
+<div class="itemContainer">
+  <img [src]="item?.cover" alt="cover" class="cover" />
+  <div class="itemInfo">
+    <p class="brand">{{ item?.brand }}</p>
+    <p class="name">{{ item?.name }}</p>
+    <div class="detailInfo">
+      <div class="line">
+        <p>판매가:</p>
+        <p *ngIf="item?.discountRate !== 1" class="defaultPrice">
+          {{ item?.price | number : "1.0-0" }}원
+        </p>
+        <p *ngIf="item?.discountRate !== 1" class="discount">
+          -{{ 100 - item?.discountRate * 100 }}% 할인
+        </p>
+        <p *ngIf="item?.discountAmount !== 0" class="discount">
+          (-{{ item?.discountAmount }}원 추가 할인)
+        </p>
+        <p class="price">
+          {{
+            item?.price * item?.discountRate - item?.discountAmount
+              | number : "1.0-0"
+          }}원
+        </p>
+      </div>
+      <p *ngIf="item?.size !== null">사이즈: {{ item?.size }}</p>
+      <p *ngIf="item?.sizeDetail !== null">상세치수: {{ item?.sizeDetail }}</p>
+      <p>
+        제품상태:
+        {{
+          item?.condition !== null
+            ? item?.condition
+            : "[중고] 사진 외에 특별한 오염이 없는 양호한 상태"
+        }}
+      </p>
+      <p>
+        배송비:
+        {{
+          item?.price * item?.discountRate - item?.discountAmount < 50000
+            ? "3000원"
+            : "무료"
+        }}
+      </p>
+      <div *ngIf="item?.mdYn === 'y'" class="md">MD추천</div>
+    </div>
+
+    <div class="buttonContainer">
+      <button class="black" (click)="wait()">BUY NOW</button>
+      <button class="white" (click)="wait()">장바구니</button>
+      <button class="white" (click)="wait()">문의하기</button>
+      <button class="white" (click)="wait()">찜하기</button>
+    </div>
+  </div>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: center">
+  <img src="\images\items\guide1.jpg" class="guide guide1" alt="guide1" />
+  <img src="\images\items\guide2.jpg" class="guide guide2" alt="guide2" />
+  <img [src]="item?.detail" class="guide" alt="detail" />
+  <img src="\images\items\guide3.jpg" class="guide guide3" alt="guide3" />
+</div>

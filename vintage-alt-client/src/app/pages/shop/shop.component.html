@@ -26,7 +26,10 @@
   </select>
 </div>
 
-<div class="sort-container">
+<div
+  class="sort-container"
+  *ngIf="selectedC1 !== 'NEW' && selectedC1 !== 'SALE'"
+>
   <select
     class="selector"
     style="width: 133px"
@@ -41,15 +44,5 @@
 </div>
 
 <div class="item-container">
-  <div style="width: 256px; height: 333px; background-color: red"></div>
-  <div style="width: 256px; height: 333px; background-color: red"></div>
-  <div style="width: 256px; height: 333px; background-color: red"></div>
-  <div style="width: 256px; height: 333px; background-color: red"></div>
-  <div style="width: 256px; height: 333px; background-color: red"></div>
-  <div style="width: 256px; height: 333px; background-color: red"></div>
-  <div style="width: 256px; height: 333px; background-color: red"></div>
-  <div style="width: 256px; height: 333px; background-color: red"></div>
-  <div style="width: 256px; height: 333px; background-color: red"></div>
-  <div style="width: 256px; height: 333px; background-color: red"></div>
-  <div style="width: 256px; height: 333px; background-color: red"></div>
+  <app-shop-box *ngFor="let item of items" [item]="item"></app-shop-box>
 </div>
