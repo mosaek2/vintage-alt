@@ -1,0 +1,50 @@
+.noticeBox {
+  width: 589px;
+  min-height: 46px;
+  display: flex;
+  border-bottom: 1px solid #e2e2e2;
+  font-size: 13px;
+  position: relative;
+  transition-duration: 0.4s;
+}
+
+.noticeBox:hover {
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.moveBox:hover {
+  border-bottom: 1px solid #d0d0d0;
+  transform: translate(0px, 2px);
+}
+
+.fixBox {
+  background-color: #fffafa;
+}
+
+.title {
+  width: 468px;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-left: 10px;
+}
+
+.fixTitle {
+  width: 589px !important;
+  font-weight: bold;
+  font-size: 14px !important;
+}
+
+.titleText {
+  cursor: pointer;
+}
+
+.date {
+  width: 121px;
+  min-height: 46px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-right: 10px;
+}

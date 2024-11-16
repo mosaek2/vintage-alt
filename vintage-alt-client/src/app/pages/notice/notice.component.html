@@ -1,0 +1,8 @@
+<p class="page-title">공지사항</p>
+
+<div class="notice">
+  <app-post-notice
+    *ngFor="let notice of notices"
+    [post]="notice"
+  ></app-post-notice>
+</div>

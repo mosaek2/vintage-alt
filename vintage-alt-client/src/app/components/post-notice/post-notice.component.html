@@ -1,0 +1,8 @@
+<div [ngClass]="post?.fixYn === 'n' ? 'noticeBox moveBox' : 'noticeBox fixBox'">
+  <div [ngClass]="post?.fixYn === 'n' ? 'title' : 'title fixTitle'">
+    <p class="titleText">{{ post?.title }}</p>
+  </div>
+  <div *ngIf="post?.fixYn === 'n'" class="date">
+    {{ getFormattedDate(post?.writeDate) }}
+  </div>
+</div>
