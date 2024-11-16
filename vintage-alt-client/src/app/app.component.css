@@ -17,12 +17,14 @@
   font-size: 12px;
   color: #717171;
 }
+
 .header-global-nav-frame {
   width: 1260px;
   height: 46px;
   display: flex;
   align-items: center;
 }
+
 .home-box {
   width: 54px;
   height: 46px;
@@ -32,22 +34,27 @@
   align-items: center;
   margin-right: 18px;
 }
+
 .home-box:hover {
   background-color: #717171;
   color: #ebebeb;
 }
+
 .button-container {
   display: flex;
   gap: 12px;
 }
+
 .home-box,
 .global-button {
   cursor: pointer;
   transition-duration: 0.2s;
 }
+
 .global-button:hover {
   color: #999999;
 }
+
 .vertical-bar {
   width: 1px;
   height: 10px;
@@ -65,11 +72,13 @@
   gap: 13px;
   cursor: default;
 }
+
 .vintage {
   color: #2c2c2c;
   font-size: 36px;
   letter-spacing: 0.2em;
 }
+
 .since {
   color: #717171;
   font-size: 13px;
@@ -89,6 +98,7 @@
   font-size: 14px;
   color: #2c2c2c;
 }
+
 .header-global-category-frame {
   width: 1260px;
   height: 54px;
@@ -96,6 +106,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .hamburger-menu {
   width: 54px;
   height: 54px;
@@ -108,11 +119,13 @@
   gap: 4px;
   transition-duration: 0.2s;
 }
+
 .hamburger-menu-line {
   width: 16px;
   height: 2px;
   background-color: #717171;
 }
+
 .menu {
   height: 54px;
   display: flex;
@@ -122,17 +135,21 @@
   transition-duration: 0.2s;
   cursor: pointer;
 }
+
 .menu:hover,
 .menu-wrapper:hover .menu {
   color: #999999;
 }
+
 .sale {
   color: #db0007;
 }
+
 .menu-wrapper,
 .hamburger-menu-wrapper {
   position: relative;
 }
+
 .sub-menu {
   padding: 14px;
   min-width: 438px;
@@ -145,6 +162,7 @@
   display: none;
   z-index: 20;
 }
+
 .all-menu {
   padding: 14px;
   height: 400px;
@@ -157,19 +175,23 @@
   overflow-y: auto;
   overflow-x: auto;
 }
+
 .menu:hover + .sub-menu,
 .sub-menu:hover {
   display: block;
 }
+
 .hamburger-menu:hover + .all-menu,
 .all-menu:hover {
   display: flex;
   gap: 14px;
 }
+
 .hamburger-menu-wrapper:hover .hamburger-menu {
   border: none;
   background-color: #717171;
 }
+
 .hamburger-menu-wrapper:hover .hamburger-menu-line {
   background-color: #ebebeb;
 }
@@ -181,25 +203,30 @@
   padding: 14px;
   background-color: #fafafc;
 }
+
 .c2 {
   margin-top: 20px;
   margin-left: 20px;
   font-size: 15px;
 }
+
 .c3 {
   color: #6d6d6f;
   margin-top: 6px;
   margin-left: 25px;
   font-size: 13px;
 }
+
 .c2-name {
   padding: 6px 0px;
   font-size: 13px;
   cursor: pointer;
 }
+
 .c2-name:hover {
   color: #999999;
 }
+
 .c2-cover-box {
   position: absolute;
   top: 14px;
@@ -208,6 +235,7 @@
   height: 262px;
   border-left: 1px solid #ebebeb;
 }
+
 .c2-cover {
   width: 260px;
   height: 260px;
@@ -216,13 +244,16 @@
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
+
 .c2-cover.show {
   opacity: 1;
 }
+
 .clickable {
   cursor: pointer;
   transition-duration: 0.2s;
 }
+
 .clickable:hover {
   color: #999999;
 }

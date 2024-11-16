@@ -8,6 +8,7 @@
   margin: 82px auto 0px auto;
   position: relative;
 }
+
 .must-write {
   position: absolute;
   top: 15px;
@@ -15,6 +16,7 @@
   font-size: 12px;
   font-weight: normal;
 }
+
 .table-line {
   width: 1048px;
   display: flex;
@@ -23,6 +25,7 @@
   color: #2c2c2c;
   font-size: 14px;
 }
+
 .label-cell {
   width: 150px;
   min-height: 72px;
@@ -31,11 +34,13 @@
   padding-left: 20px;
   background-color: #f5f5f5;
 }
+
 .input-cell {
   display: flex;
   align-items: center;
   padding: 16px 0px 16px 20px;
 }
+
 .dash {
   width: 20px;
   height: 40px;
@@ -43,19 +48,23 @@
   justify-content: center;
   align-items: center;
 }
+
 .side-text {
   color: #717171;
   margin-left: 10px;
 }
+
 .side-text-password-alert {
   color: #db0007;
   margin-left: 10px;
 }
+
 .input-address-container {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
+
 .input-1 {
   width: 224px;
   height: 40px;
@@ -64,9 +73,11 @@
   outline: none;
   color: #2c2c2c;
 }
+
 .input-1::placeholder {
   color: #cccccc;
 }
+
 .input-2 {
   width: 62px;
   height: 40px;
@@ -75,6 +86,7 @@
   outline: none;
   color: #2c2c2c;
 }
+
 .button-1 {
   width: 84px;
   height: 40px;
@@ -85,9 +97,11 @@
   font-size: 14px;
   transition-duration: 0.2s;
 }
+
 .button-1:hover {
   background-color: #f5f5f5;
 }
+
 .button-2 {
   margin: 80px auto 0px auto;
   width: 200px;
@@ -99,11 +113,13 @@
   transition-duration: 0.2s;
   outline: none;
 }
+
 .button-2:hover,
 .button-2:focus {
   background-color: #717171;
   color: #ebebeb;
 }
+
 .select-1 {
   width: 224px;
   height: 40px;
@@ -112,6 +128,7 @@
   outline: none;
   color: #2c2c2c;
 }
+
 .radio-1 {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -122,16 +139,19 @@
   border-radius: 100%;
   cursor: pointer;
 }
+
 .radio-1:checked {
   background-color: #717171;
   border: 3px solid white;
   box-shadow: 0 0 0 1.6px #717171;
 }
+
 .label-1 {
   margin-left: 3px;
   margin-right: 18px;
   color: #717171;
 }
+
 .birth-container {
   display: flex;
   align-items: center;
