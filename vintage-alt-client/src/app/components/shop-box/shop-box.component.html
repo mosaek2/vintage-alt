@@ -12,5 +12,8 @@
     </span>
     <span class="final-price">{{ formattedFinalPrice }}원</span>
   </p>
-  <div *ngIf="item.discountRate !== 1" class="sale-mark">SALE</div>
+  <div style="display: flex; gap: 5px">
+    <div *ngIf="item.discountRate !== 1" class="sale-mark">SALE</div>
+    <div *ngIf="item.mdYn === 'y'" class="md-mark">MD</div>
+  </div>
 </div>

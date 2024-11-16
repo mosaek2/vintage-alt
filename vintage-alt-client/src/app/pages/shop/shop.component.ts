@@ -48,6 +48,8 @@ export class ShopComponent implements OnInit {
 
         this.selectedC3 = params['c3'];
 
+        this.sort = params['sort'];
+
         this.itemService
           .getItems(
             this.selectedC1,
@@ -104,17 +106,17 @@ export class ShopComponent implements OnInit {
     this.selectedC2 = '';
     this.selectedC3 = '';
     this.c3s = [];
-    const url = `shop?c1=${this.selectedC1}&c2=${this.selectedC2}&c3=${this.selectedC3}`;
+    const url = `shop?c1=${this.selectedC1}&c2=${this.selectedC2}&c3=${this.selectedC3}&sort=${this.sort}`;
     this.router.navigateByUrl(url);
   }
   onC2Change(): void {
     this.c3s = this.c2s.find((c2) => c2.name === this.selectedC2).c3s;
     this.selectedC3 = '';
-    const url = `shop?c1=${this.selectedC1}&c2=${this.selectedC2}&c3=${this.selectedC3}`;
+    const url = `shop?c1=${this.selectedC1}&c2=${this.selectedC2}&c3=${this.selectedC3}&sort=${this.sort}`;
     this.router.navigateByUrl(url);
   }
   onC3Change(): void {
-    const url = `shop?c1=${this.selectedC1}&c2=${this.selectedC2}&c3=${this.selectedC3}`;
+    const url = `shop?c1=${this.selectedC1}&c2=${this.selectedC2}&c3=${this.selectedC3}&sort=${this.sort}`;
     this.router.navigateByUrl(url);
   }
   onSortChange(): void {

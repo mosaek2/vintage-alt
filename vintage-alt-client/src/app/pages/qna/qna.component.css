@@ -1,0 +1,23 @@
+.qna {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 88px;
+  gap: 30px;
+}
+
+.qna-btn {
+  width: 268px;
+  height: 49px;
+  margin: 77px auto 0px auto;
+  color: #818181;
+  font-size: 15px;
+  border: 1px solid #e2e2e2;
+  background-color: #fbfbfb;
+  transition-duration: 0.5s;
+}
+
+.qna-btn:hover,
+.qna-btn:focus {
+  color: #f1a919;
+}

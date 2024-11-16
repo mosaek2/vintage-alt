@@ -1,0 +1,30 @@
+<p class="page-title">Q&A</p>
+
+<img
+  *ngIf="post?.item?.uid !== 0"
+  [src]="post?.item?.cover"
+  class="cover"
+  alt="cover"
+/>
+<p *ngIf="post?.item?.uid !== 0" class="item">
+  [{{ post?.item?.brand }}] {{ post?.item?.name }}
+  <span *ngIf="post?.item?.size !== null">({{ post?.item?.size }})</span>
+</p>
+<p *ngIf="post?.item?.uid === 0" class="item">일반문의</p>
+
+<div *ngIf="commentList" class="answer">
+  {{ commentList[0]?.content }}
+</div>
+
+<div class="title">{{ post?.title }}</div>
+
+<div class="content">{{ post?.content }}</div>
+
+<div class="buttonContainer">
+  <p class="info">
+    {{ getMaskedName(post?.member?.name) }}님이
+    {{ getFormattedDate(post?.writeDate) }}에 작성한 글입니다.
+  </p>
+  <button>수정</button>
+  <button>삭제</button>
+</div>

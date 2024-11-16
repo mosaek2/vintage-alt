@@ -14,9 +14,7 @@ export class ItemService {
   constructor(private http: HttpClient) {}
 
   getItems(c1: string, c2: string, c3: string, sort: string): Observable<any> {
-    return this.http.get<any>(this.itemsUrl, {
-      params: { c1, c2, c3, sort },
-    });
+    return this.http.get<any>(this.itemsUrl, { params: { c1, c2, c3, sort } });
   }
 
   getNew(): Observable<any> {
@@ -28,8 +26,6 @@ export class ItemService {
   }
 
   getItem(uid: string): Observable<any> {
-    return this.http.get<any>(this.itemUrl, {
-      params: { uid },
-    });
+    return this.http.get<any>(this.itemUrl, { params: { uid } });
   }
 }

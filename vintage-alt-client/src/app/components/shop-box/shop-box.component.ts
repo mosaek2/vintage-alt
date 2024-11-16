@@ -31,7 +31,7 @@ export class ShopBoxComponent {
   }
 
   goToDetail(uid: string) {
-    const url = `detail?uid=${uid}`;
+    const url = `shop/detail?uid=${uid}`;
     this.router.navigateByUrl(url);
   }
 }

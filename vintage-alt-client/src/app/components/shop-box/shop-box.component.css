@@ -58,3 +58,13 @@
   justify-content: center;
   align-items: center;
 }
+
+.md-mark {
+  width: 33px;
+  height: 13px;
+  font-size: 10px;
+  border: 1px solid #5c73dd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

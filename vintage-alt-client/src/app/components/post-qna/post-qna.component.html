@@ -1,0 +1,25 @@
+<div [ngClass]="post?.item?.uid !== 0 ? 'qnaBox moveBox' : 'qnaBox fixBox'">
+  <div class="coverBox">
+    <img
+      *ngIf="post?.item?.uid !== 0; else generalQuery"
+      [src]="post?.item.cover"
+      class="cover"
+      alt="cover"
+    />
+    <ng-template #generalQuery>
+      <div class="cover">일반문의</div>
+    </ng-template>
+  </div>
+  <div class="titleBox">
+    <p class="titleText" (click)="goToQnaDetail(post?.uid)">
+      {{ post?.title }}
+    </p>
+    <p *ngIf="post?.item?.uid !== 0" class="item">
+      [{{ post?.item?.brand }}] {{ post?.item?.name }}
+      <span *ngIf="post?.item?.size !== null">({{ post?.item?.size }})</span>
+    </p>
+    <p *ngIf="post?.answerYn === 'y'" class="answer">답변완료</p>
+  </div>
+  <div class="nameBox">{{ getMaskedName(post?.member?.name) }}</div>
+  <div class="dateBox">{{ getFormattedDate(post?.writeDate) }}</div>
+</div>

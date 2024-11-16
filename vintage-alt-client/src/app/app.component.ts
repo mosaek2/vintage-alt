@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
 
   navigateToShop(c1: string = '', c2: string = '', c3: string = '') {
     this.shouldScrollToTop = true;
-    const url = `shop?c1=${c1}&c2=${c2}&c3=${c3}`;
+    const url = `shop?c1=${c1}&c2=${c2}&c3=${c3}&sort=new`;
     this.router.navigateByUrl(url);
     this.closeMenu();
     this.hoveredC2Name = null;
