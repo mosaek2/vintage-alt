@@ -1,0 +1,27 @@
+.banner {
+  max-width: 700px;
+  border: 1px solid #efefef;
+  margin-top: 50px;
+}
+
+.banner img {
+  max-width: 100%;
+}
+
+.report {
+  max-width: 1100px;
+  height: auto;
+  margin-top: 160px;
+}
+
+.report img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition-duration: 0.5s;
+}
+
+.report img:hover {
+  transform: scale(0.95);
+}

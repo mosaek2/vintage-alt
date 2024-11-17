@@ -270,3 +270,65 @@
   border-top: 1px solid #ebebeb;
   margin-top: 200px;
 }
+
+.top {
+  max-width: 1400px;
+  margin: 32px auto 0px auto;
+  display: flex;
+  gap: 67px;
+}
+
+.phone {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.topBox1 {
+  flex: 1.2;
+}
+
+.topBox2 {
+  flex: 1;
+}
+
+.topBox3 {
+  flex: 1.3;
+}
+
+.topTitle {
+  color: #444444;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.top .textAlign {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 11px;
+  margin-top: 30px;
+}
+
+.bottom {
+  max-width: 1752px;
+  height: 30px;
+  margin: 31px auto 0px auto;
+  border-top: 1px solid #eeeeee;
+}
+
+.bottom .textAlign {
+  max-width: 1400px;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 11px;
+  margin-top: 30px;
+  color: #999999;
+}
+
+.line {
+  display: flex;
+  gap: 20px;
+}

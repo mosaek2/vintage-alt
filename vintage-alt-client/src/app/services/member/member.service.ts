@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class MemberService {
   private joinUrl = 'http://localhost:8080/join';
+  private loginUrl = 'http://localhost:8080/login/request';
 
   constructor(private http: HttpClient) {}
 
@@ -41,5 +42,12 @@ export class MemberService {
 
   postPhoneCheck(phone: { phone: string }): Observable<any> {
     return this.http.post(`${this.joinUrl}/phoneCheck`, phone);
+  }
+
+  postLogin(loginInfo: { mail: string; password: string }): Observable<any> {
+    return this.http.post(this.loginUrl, loginInfo, {
+      withCredentials: true,
+      responseType: 'text',
+    });
   }
 }

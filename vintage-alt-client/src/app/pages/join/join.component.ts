@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MemberService } from '../../services/member/member.service';
-import { nextTick } from 'process';
 import { Router } from '@angular/router';
 
 @Component({
