@@ -1,13 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MemberService {
-  private joinUrl = 'http://localhost:8080/join';
-  private loginUrl = 'http://localhost:8080/login/request';
+  private apiUrl = environment.apiUrl;
+
+  private joinUrl = `${this.apiUrl}/join`;
+  private loginUrl = `${this.apiUrl}/login/request`;
 
   constructor(private http: HttpClient) {}
 
