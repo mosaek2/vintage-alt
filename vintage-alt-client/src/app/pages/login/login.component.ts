@@ -43,4 +43,9 @@ export class LoginComponent {
         },
       });
   }
+
+  onClickJoinButton(): void {
+    this.router.navigateByUrl(`/join`);
+    window.scrollTo(0, 0);
+  }
 }
