@@ -13,6 +13,11 @@ import { CategoryService } from './services/category/category.service';
 export class AppComponent implements OnInit {
   private shouldScrollToTop = false;
 
+  public bannerShow: boolean = true;
+  onClickBannerClose(): void {
+    this.bannerShow = false;
+  }
+
   public c1s: any[] = [];
   constructor(private router: Router, private itemService: CategoryService) {
     this.c1s = this.itemService.getC1s();

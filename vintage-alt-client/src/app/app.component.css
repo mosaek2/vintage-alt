@@ -1,7 +1,31 @@
-.banner {
+.top-banner {
   min-width: 1048px;
   height: 318px;
   background-color: #2c2c2c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ebebeb;
+  position: relative;
+}
+
+.banner-close-wrapper {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 25px;
+  right: 50px;
+}
+
+.banner-close-wrapper p {
+  color: #717171;
+  font-size: 25px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.banner-close-wrapper p:hover {
+  color: #ebebeb;
 }
 
 .header-global-nav {
