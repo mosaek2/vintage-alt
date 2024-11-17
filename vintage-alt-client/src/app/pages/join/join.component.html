@@ -14,8 +14,13 @@
     <span style="color: #db0007">*</span>
   </div>
   <div class="input-cell">
-    <input class="input-1" type="email" [(ngModel)]="email" />
-    <button class="button-1">중복 확인</button>
+    <input
+      class="input-1"
+      type="email"
+      [(ngModel)]="email"
+      (change)="onChangeMail()"
+    />
+    <button class="button-1" (click)="onClickMailCheck()">중복 확인</button>
   </div>
 </div>
 
@@ -136,12 +141,12 @@
     <span style="color: #db0007">*</span>
   </div>
   <div class="input-cell">
-    <input class="input-2" [(ngModel)]="phone1" />
+    <input class="input-2" [(ngModel)]="phone1" (change)="onChangePhone()" />
     <p class="dash">-</p>
-    <input class="input-2" [(ngModel)]="phone2" />
+    <input class="input-2" [(ngModel)]="phone2" (change)="onChangePhone()" />
     <p class="dash">-</p>
-    <input class="input-2" [(ngModel)]="phone3" />
-    <button class="button-1">중복 확인</button>
+    <input class="input-2" [(ngModel)]="phone3" (change)="onChangePhone()" />
+    <button class="button-1" (click)="onClickPhoneCheck()">중복 확인</button>
   </div>
 </div>
 
